@@ -30,6 +30,8 @@ PreferencesDialog::PreferencesDialog(ImageIO * imageIO, QWidget * parent) : QDia
 	QString userLocale = Globals::prefs->getUserLocale();
 	ui.comboBoxLocale->addItem("English");
 	if (userLocale == "en") ui.comboBoxLocale->setCurrentIndex(1);
+	ui.comboBoxLocale->addItem("Deutsch");
+	if (userLocale == "de") ui.comboBoxLocale->setCurrentIndex(2);
 	
 	ui.checkBoxStartMaximized->setChecked(Globals::prefs->getMaximizedWindow());
 	ui.checkBoxStartFullscreen->setChecked(Globals::prefs->getStartFullscreen());
@@ -149,6 +151,9 @@ void PreferencesDialog::savePreferences()
 			break;
 		case 1:
 			Globals::prefs->setUserLocale("en");
+			break;
+		case 2:
+			Globals::prefs->setUserLocale("de");
 			break;
 	}
 	

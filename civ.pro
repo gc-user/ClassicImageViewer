@@ -69,11 +69,12 @@ FORMS += src/*.ui \
 
 RESOURCES += resources/res.qrc
 
-TRANSLATIONS = i18n/en.ts
-
+TRANSLATIONS += i18n/de.ts \
+	       i18n/en.ts
 
 # Automating Generation of QM Files
-TRANSLATIONS_FILES =
+TRANSLATIONS_FILES += i18n/de.qm \
+	             i18n/en.qm
 
 qtPrepareTool(LRELEASE, lrelease)
 for(tsfile, TRANSLATIONS) {
